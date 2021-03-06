@@ -29,7 +29,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/.emacs.d/org/")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -59,8 +59,10 @@
 (setq auto-save-default t
       make-backup-files t)
 
+
 (after! smartparens
-  (add-hook! smartparens-mode :append #'smartparens-strict-mode))
+  (add-hook! smartparens-mode :append #'smartparens-strict-mode)
+  (sp-use-smartparens-bindings))
 
 (use-package! iedit
   :defer
@@ -68,3 +70,30 @@
   (set-face-background 'iedit-occurrence "Magenta")
   :bind
   ("C-;" . iedit-mode))
+
+;; Bind tab everywhere
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; (after! company                                                     ;;
+;;   (global-set-key (kbd "TAB") #'company-indent-or-complete-common)) ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package! magit
+  :defer
+  :config
+  (setq magit-save-repository-buffers t))
+
+(use-package! clojure
+  :defer
+  :init  (setq clojure-align-forms-automatically t)
+  :bind
+  ([(f5)] . cider-eval-last-sexp)
+  ([(shift f5)] . cider-pprint-eval-last-sexp-to-comment))
+
+(use-package! treemacs
+  :defer
+  :bind
+  ("M-0" . treemacs-select-window))
+
+(use-package! aggressive-indent
+  :init
+  (global-aggressive-indent-mode 1))

@@ -51,3 +51,5 @@
 (package! org-roam)
 
 (package! iedit)
+
+(package! aggressive-indent)
