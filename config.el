@@ -66,6 +66,9 @@
          ("M-<left_bracket>" . sp-wrap-square)
          ("M-{" . sp-wrap-curly)))
 
+(use-package! company
+  :init (set-company-backend! 'prog-mode
+          'company-capf 'company-files 'company-dabbrev 'company-yasnippet))
 
 (use-package! iedit
   :defer
