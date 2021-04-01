@@ -59,10 +59,13 @@
 (setq auto-save-default t
       make-backup-files t)
 
+(use-package! smartparens
+  :init (add-hook! smartparens-mode :append #'smartparens-strict-mode)
+  (sp-use-smartparens-bindings)
+  :bind (("M-(" . sp-wrap-round)
+         ("M-<left_bracket>" . sp-wrap-square)
+         ("M-{" . sp-wrap-curly)))
 
-(after! smartparens
-  (add-hook! smartparens-mode :append #'smartparens-strict-mode)
-  (sp-use-smartparens-bindings))
 
 (use-package! iedit
   :defer
