@@ -97,3 +97,9 @@
 (use-package! aggressive-indent
   :init
   (global-aggressive-indent-mode 1))
+
+(use-package! ace-window
+  :defer
+  :init (setq aw-ignored-buffers '(cider-repl-mode)
+              aw-ignore-on t)
+  :bind ("M-o" . ace-window))
