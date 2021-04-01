@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: bump up
+# key: bump
+# --
+chore: bump up version number
