@@ -84,10 +84,10 @@
 
 (use-package! clojure
   :defer
-  :init  (setq clojure-align-forms-automatically t)
-  :bind
-  ([(f5)] . cider-eval-last-sexp)
-  ([(shift f5)] . cider-pprint-eval-last-sexp-to-comment))
+  :init  (setq clojure-align-forms-automatically t
+               clojure-toplevel-inside-comment-form t)
+  :bind (([(f5)] . cider-eval-last-sexp)
+         ([(shift f5)] . cider-pprint-eval-last-sexp-to-comment)))
 
 (use-package! treemacs
   :defer
