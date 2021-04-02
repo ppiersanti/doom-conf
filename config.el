@@ -53,7 +53,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-
+(load! "mylib.el")
+(load! "remote-term.el")
 
 ;; backup files and save
 (setq auto-save-default t
