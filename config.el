@@ -107,6 +107,6 @@
 
 (use-package! ace-window
   :defer
-  :init (setq aw-ignored-buffers '(cider-repl-mode)
+  :init (setq aw-ignored-buffers '(cider-repl-mode treemacs-mode)
               aw-ignore-on t)
   :bind ("M-o" . ace-window))
