@@ -39,7 +39,12 @@
 
 (global-set-key (quote [f2]) 'dabbrev-expand)
 (global-set-key (quote [f3]) 'insert-register)
+
+
 ;; (global-set-key (quote [f9]) 'copy-and-comment)
 ;; (global-set-key (quote [f12]) 'comment-or-uncomment-region)
 ;; (global-set-key [C-tab] 'other-window)
 ;; (global-set-key [C-S-tab] (lambda () (interactive) (other-window -1)))
+
+(add-hook 'emacs-lisp-mode-hook
+          (lambda () (local-set-key (kbd "<f5>") 'eval-last-sexp)))
