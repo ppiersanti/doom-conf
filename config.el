@@ -96,6 +96,10 @@
   :bind (([(f5)] . cider-eval-last-sexp)
          ([(shift f5)] . cider-pprint-eval-last-sexp-to-comment)))
 
+(use-package! cider
+  :defer
+  :init (setq cider-save-file-on-load t))
+
 (use-package! treemacs
   :defer
   :bind
